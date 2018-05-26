@@ -12,20 +12,14 @@ from nxt.bluesock import BlueSock
 # Create socket to NXT brick
 sock = 	BlueSock(ID)
 
-# On success, socket is non-empty
-if sock:
 
-   # Connect to brick
-   brick = sock.connect()
+# Connect to brick
+brick = sock.connect()
 
-   # Play tone A above middle C for 1000 msec
-   brick.play_tone_and_wait(440, 1000)
+# Play tone A above middle C for 1000 msec
+brick.play_tone_and_wait(440, 1000)
 
-   # Close socket
-   sock.close()
-
-# Failure
-else:
-   print 'No NXT bricks found'
+# Close socket
+sock.close()
 
 # EOF
