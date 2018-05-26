@@ -4,6 +4,15 @@
 
 Reference: <http://home.wlu.edu/~levys/courses/csci250s2013/nxt_python.html>
 
+### Setup
+
+```
+brew update
+brew install python3
+```
+
+Install application
+
 ```
 wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
 vi nxt_beep.py  # Adjust MAC Address
