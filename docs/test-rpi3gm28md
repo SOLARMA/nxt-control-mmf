@@ -4,7 +4,7 @@
 
 ### Setup
 
-```
+```shell
 sudo apt update 
 sudo apt dist-upgrade
 sudo apt install python3
@@ -13,7 +13,19 @@ python3 --version
 virtualenv --version
 ```
 
-Test XXX
+Result:
+
+```
+pi@rpi3gm28:~ $ python3 --version
+Python 3.5.3
+pi@rpi3gm28:~ $ pip3 --version
+pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.5)
+pi@rpi3gm28:~ $ virtualenv --version
+15.1.0
+pi@rpi3gm28:~ $
+```
+
+Test nxt-python
 
 ```
 mkdir -p $HOME/github/xxx
