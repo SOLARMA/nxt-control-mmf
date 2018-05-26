@@ -31,35 +31,32 @@ git clone https://github.com/Eelviny/nxt-python
 
 Install application
 
-```
-cd $HOME/github/Eelviny/nxt-python
-
-# wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
-# vi nxt_beep.py  # Adjust MAC Address
-
+```shell
+cd $HOME/github/SOLARMA/nxt-control-mmf
 python3 -m venv .venv
 
 source .venv/bin/activate
 
-#  TODO pip install -r $HOME/github/Eelviny/requirements.txt
+pip install -r $HOME/github/SOLARMA/nxt-control-mmf/requirements.txt
+```
+
+Test:
+
+```shell
+sudo $HOME/github/SOLARMA/nxt-control-mmf/.venv/bin/nxt_test --verbose
 
 cd $HOME/github/Eelviny/nxt-python
-sudo .venv/bin/xxx
+python setup.py install
 
 # python nxt_beep.py
+# wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
+# vi nxt_beep.py  # Adjust MAC Address
 ```
 
 Result:
 
 ```
-(.venv) mac-tizy:nxt-control-mmf gmacario$ python nxt_beep.py
-Traceback (most recent call last):
-  File "nxt_beep.py", line 10, in <module>
-    from nxt.bluesock import BlueSock
-ImportError: No module named nxt.bluesock
-(.venv) mac-tizy:nxt-control-mmf gmacario$
+TODO
 ```
-
-TODO: Install BlueSock
 
 <!-- EOF -->
