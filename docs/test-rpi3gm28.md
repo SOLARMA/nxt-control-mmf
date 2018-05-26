@@ -24,21 +24,29 @@ TODO
 Test nxt-python
 
 ```
-mkdir -p $HOME/github/nxt-python
+mkdir -p $HOME/github/Eelviny
+cd $HOME/github/Eelviny
 git clone https://github.com/Eelviny/nxt-python
 ```
 
 Install application
 
 ```
-wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
-vi nxt_beep.py  # Adjust MAC Address
+cd $HOME/github/Eelviny/nxt-python
 
-sudo apt install virtualenv
-virtualenv --python=python2.7 .venv
+# wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
+# vi nxt_beep.py  # Adjust MAC Address
+
+python3 -m venv .venv
 
 source .venv/bin/activate
-python nxt_beep.py
+
+#  TODO pip install -r $HOME/github/Eelviny/requirements.txt
+
+cd $HOME/github/Eelviny/nxt-python
+sudo .venv/bin/xxx
+
+# python nxt_beep.py
 ```
 
 Result:
