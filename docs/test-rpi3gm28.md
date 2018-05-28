@@ -21,7 +21,7 @@ Result:
 TODO
 ```
 
-Test nxt-python
+Clone project nxt-python
 
 ```
 mkdir -p $HOME/github/Eelviny
