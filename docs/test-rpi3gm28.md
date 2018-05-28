@@ -46,6 +46,7 @@ cd -
 Test:
 
 ```shell
+cd $HOME/github/SOLARMA/nxt-control-mmf
 sudo .venv/bin/nxt_test --verbose
 ```
 
@@ -74,12 +75,10 @@ Play test sound...done
 (.venv) pi@rpi3gm28:~/github/SOLARMA/nxt-control-mmf $
 ```
 
-FIXME: Update nxt_beep.py to Python3
+FIXME: How to run nxt_beep.py with the proper permissions???
 
 ```shell
 # python nxt_beep.py
-# wget http://home.wlu.edu/~levys/courses/csci250s2013/nxt_beep.py
-# vi nxt_beep.py  # Adjust MAC Address
 ```
 
 
