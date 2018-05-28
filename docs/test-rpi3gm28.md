@@ -29,7 +29,7 @@ cd $HOME/github/Eelviny
 git clone https://github.com/Eelviny/nxt-python
 ```
 
-Install application
+Create Python venv and install application prerequisites
 
 ```shell
 cd $HOME/github/SOLARMA/nxt-control-mmf
@@ -75,11 +75,23 @@ Play test sound...done
 (.venv) pi@rpi3gm28:~/github/SOLARMA/nxt-control-mmf $
 ```
 
-FIXME: How to run nxt_beep.py with the proper permissions???
+### Execute nxt_beep
 
 ```shell
-# python nxt_beep.py
+cd $HOME/github/SOLARMA/nxt-control-mmf
+source .venv/bin/activate
+
+python nxt_beep.py
 ```
+
+Result:
+
+```
+TODO
+```
+
+**FIXME**: Figure out how to run `nxt_beep.py` with the proper permissions
+
 
 
 <!-- EOF -->
