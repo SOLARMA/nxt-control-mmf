@@ -28,7 +28,7 @@ pi@rpi3gm26:~ $
 ```
 
 Clone project nxt-python
-(NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/)
+(NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50)
 
 ```
 mkdir -p $HOME/github/Eelviny
