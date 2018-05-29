@@ -27,28 +27,27 @@ Python 3.4.2
 pi@rpi3gm26:~ $
 ```
 
-Clone project nxt-python
-(NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50)
-
-```
-mkdir -p $HOME/github/Eelviny
-cd $HOME/github/Eelviny
-git clone https://github.com/Eelviny/nxt-python
-```
-
 Create Python venv and install application prerequisites
 
 ```shell
-cd $HOME/github/SOLARMA/nxt-control-mmf
 python3 -m venv $HOME/.nxt-venv
-
 source $HOME/.nxt-venv/bin/activate
 
-pip install -r $HOME/github/SOLARMA/nxt-control-mmf/requirements.txt
+cd $HOME/github/SOLARMA/nxt-control-mmf
+pip install -r requirements.txt
+```
+
+NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50, we should therefore install it with the following command
+
+```shell
+# Command "pip install nxt-python" will eventually be enough
 #
-# pip install nxt-python
-cd $HOME/github/Eelviny/nxt-python
-python setup.py install
+# mkdir -p $HOME/github/Eelviny
+# cd $HOME/github/Eelviny
+# git clone https://github.com/Eelviny/nxt-python
+# cd $HOME/github/Eelviny/nxt-python && python setup.py install
+#
+pip install -e git+https://github.com/Eelviny/nxt-python#egg=nxt-python
 ```
 
 Connect your LEGO Mindstorms NXT to an empty USB port on the Raspberry Pi

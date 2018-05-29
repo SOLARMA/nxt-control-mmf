@@ -1,2 +1,4 @@
 PyBluez==0.22
 pyusb==1.0.2
+# nxt-python==3.0 not yet available, use git master
+-e git+https://github.com/Eelviny/nxt-python#egg=nxt-python
