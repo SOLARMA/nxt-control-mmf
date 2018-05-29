@@ -45,9 +45,10 @@ python3 -m venv $HOME/.nxt-venv
 source $HOME/.nxt-venv/bin/activate
 
 pip install -r $HOME/github/SOLARMA/nxt-control-mmf/requirements.txt
+#
+# pip install nxt-python
 cd $HOME/github/Eelviny/nxt-python
 python setup.py install
-cd -
 ```
 
 Connect your LEGO Mindstorms NXT to an empty USB port on the Raspberry Pi
