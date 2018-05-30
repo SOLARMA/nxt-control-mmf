@@ -33,8 +33,9 @@
 
 ### nxt-python
 
-* nxt-python Project page on GitHub: <https://github.com/Eelviny/nxt-python>
-* nxt-python wiki: <https://github.com/Eelviny/nxt-python/wiki>
+* nxt-python: <https://github.com/Eelviny/nxt-python>
+  * nxt-python wiki: <https://github.com/Eelviny/nxt-python/wiki>
+* nxt-python-examples: <https://github.com/Eelviny/nxt-python-examples>
 
 ### Misc presentations
 
