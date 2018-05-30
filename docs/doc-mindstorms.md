@@ -21,8 +21,8 @@
     - `Appendix 1-LEGO MINDSTORMS NXT Communication protocol.pdf` Version 1.00 (PDF, 24 pages)
     - `Appendix 2-LEGO MINDSTORMS NXT Direct commands.pdf` Version 1.00 (PDF, 12 pages)
     - `Appendix 3-LEGO MINDSTORMS NXT ARM7 Bluetooth Interface specification.pdf` Version 1.00 (PDF, 26 pages)
-  - NXT Hardware Developer Kit
-  - NXT Mobile Application Software
+  - [NXT Hardware Developer Kit](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/advanced/lego%20mindstorms%20ev3%20hardware%20developer%20kit.zip) - `lego mindstorms ev3% hardware developer kit.zip`
+  - [NXT Mobile Application Software](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxtmobileapplicationsoftware_download1.zip) - `nxtmobileapplicationsoftware_download1.zip`
   - [NXT Software Developer Kit](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/sdk_download1.zip) - `sdk_download1.zip`
     - LEGO(R) MINDSTORMS(R) Executable File Specification Version: 2.0 - `SDKdoc_Download1.pdf` (PDF, 84 pages)
     - `fantom/documentation/*`
