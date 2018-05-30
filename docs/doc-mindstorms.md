@@ -4,7 +4,7 @@
 
 * NXT Software Download (PC/Mac): <https://www.lego.com/en-us/mindstorms/downloads>
   - [NXT Software Download](https://www.lego.com/en-us/mindstorms/downloads/nxt-software-download)
-    - [MINDSTORMS NXT 2.0 – Windows](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip): `nxt-g-installer-v2.0f6-windows.zi`
+    - [MINDSTORMS NXT 2.0 – Windows](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-windows.zip): `nxt-g-installer-v2.0f6-windows.zip`
     - [MINDSTORMS NXT 2.0 – Mac](https://www.lego.com/assets/franchisesites/mindstorms/mac-window-installers/nxt-g-installer-v2.0f6-mac.zip): `nxt-g-installer-v2.0f6-mac.zip`
   - [NXT Firmware Download](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/firmware131_download1.zip): `firmware131_download1.zip`
   - [Download the NXT Fantom Driver](https://www.lego.com/r/www/r/mindstorms/-/media/franchises/mindstorms%202014/downloads/firmware%20and%20software/nxt%20software/nxt%20fantom%20drivers%20v120.zip): `nxt fantom drivers v120.zip`
