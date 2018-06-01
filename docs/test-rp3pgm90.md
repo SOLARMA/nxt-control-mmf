@@ -102,10 +102,11 @@ Logged as pi@raspberrypi, type `sudo raspi-config` to change the default configu
 
 1. Change User Password
 2. Network Options / Change Hostname
+3. Network Options / Wi-fi
 
 Reboot Raspberry Pi if requested.
 
-Login as pi@<rp3pgm90_IP_address> via SSH using the new password, and verify that that hostname has been changed:
+Login as pi@<rp3pgm90_IP_address> via SSH using the new password, and verify that the hostname has been changed:
 
 ```
 gpmacario@nemo:~ $ ssh pi@172.30.48.44
@@ -185,46 +186,99 @@ pip install -r requirements.txt
 pip install -e git+https://github.com/Eelviny/nxt-python#egg=nxt-python
 ```
 
------------------------------------------------------
-# TODO
+Create udev rule `TODO` (see <https://github.com/SOLARMA/nxt-control-mmf/issues/5>)
+
+```shell
+cat << END | sudo tee /etc/udev/rules.d/10-mindstorms.rules
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0694", ATTRS{idProduct}=="0002", GROUP="users"
+# SUBSYSTEMS=="usb", ATTRS{serial}=="001653051550", GROUP="users"
+END
+```
+
+Create configuration file `$HOME/.nxt-python`
+
+```shell
+source $HOME/.nxt-venv/bin/activate
+
+python
+```
+
+When inside the Python command interpreter
+
+```
+(.nxt-venv) pi@rp3pgm90:~ $ python
+Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+[GCC 6.3.0 20170124] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nxt.locator as l; l.make_config()
+Welcome to the nxt-python config file generator!
+This function creates an example file which find_one_brick uses to find a brick.
+The file has been written at /home/pi/.nxt-python
+The file contains less-than-sane default values to get you started.
+You must now edit the file with a text editor and change the values to match what you would pass to find_one_brick
+The fields for name, host, and strict correspond to the similar args accepted by find_one_brick
+The method field contains the string which would be passed to Method()
+Any field whose corresponding option does not need to be passed to find_one_brick should be commented out (using a # at the start of the line) or simply removed.
+If you have questions, check the wiki and then ask on the mailing list.
+>>> quit()
+(.nxt-venv) pi@rp3pgm90:~ $
+```
+
+You may then edit nxt-python config file `$HOME/.nxt-python`
+
+```
+TODO
+```
+
+#### Configure nxt-python for USB connection to Mindstorms
+
+See <https://github.com/SOLARMA/nxt-control-mmf/issues/5>
 
 Connect your LEGO Mindstorms NXT to an empty USB port on the Raspberry Pi
 
 Launch `nxt_test` (part of the nxt-python package) and make sure your Mindstorms is identified
 
 ```shell
-cd $HOME/github/SOLARMA/nxt-control-mmf
-sudo $HOME/.nxt-venv/bin/nxt_test --verbose
+nxt_test --verbose
 ```
-
 Result:
 
 ```
-(.nxt-venv) pi@rpi3gm26:~/github/SOLARMA/nxt-control-mmf $ sudo $HOME/.nxt-venv/bin/nxt_test --verbose
+(.nxt-venv) pi@rp3pgm90:~ $ nxt_test --verbose
 debug = True
 Find brick...
-Warning: Config file (should be at /root/.nxt-python) was not read. Use nxt.locator.make_config() to create a config file.
-Host: None Name: None Strict: True
-USB: True BT: True
+Host: 00:16:53:05:15:50 Name: 'NXT' Strict: True
+USB: True BT: False
 info: ('NXT', '00:16:53:05:15:50', 0, 51020)
 Warning; the brick found does not match the name provided.
-  host:None
+  host:00:16:53:05:15:50
   info[0]:
-  name:None
+  name:'NXT'
 NXT brick name: NXT
 Host address: 00:16:53:05:15:50
 Bluetooth signal strength: 0
 Free user flash: 51020
 Protocol version 1.124
 Firmware version 1.31
-Battery level 8308 mV
+Battery level 8004 mV
 Play test sound...done
-(.nxt-venv) pi@rpi3gm26:~/github/SOLARMA/nxt-control-mmf $
+(.nxt-venv) pi@rp3pgm90:~ $
 ```
 
-**TODO**: Understand how to run `nxt_test` as user `pi` (without `sudo`)
+
+-----------------------------------------------------
+# TODO
+
+#### Configure nxt-python for Bluetooth connection to Mindstorms
+
+See <https://github.com/SOLARMA/nxt-control-mmf/issues/8>
+
+TODO
+
 
 ### Execute nxt_beep
+
+See <https://github.com/SOLARMA/nxt-control-mmf/issues/3>
 
 ```shell
 cd $HOME/github/SOLARMA/nxt-control-mmf
