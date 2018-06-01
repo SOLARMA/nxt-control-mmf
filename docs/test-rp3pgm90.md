@@ -126,20 +126,18 @@ Use raspi-config to set the country before use.
 pi@rp3pgm90:~ $
 ```
 
------------------------------------------------------
-# TODO
-
 ### Setup Python application
 
-(2018-06-01 10:00 CEST)
+(2018-06-01 15:40 CEST)
 
 Logged as pi@rp3pgm90, install prerequisite packages
 
 ```shell
-sudo apt update && sudo apt dist-upgrade
-sudo apt install python3 python3-pip python3-venv
-sudo apt install libbluetooth-dev build-essential
-# (NO! For python2) sudo apt install python-bluez
+sudo apt update && \
+    sudo apt -y dist-upgrade && \
+    sudo apt -y install git python3 python3-pip python3-venv && \
+    sudo apt -y install libbluetooth-dev build-essential
+# (NO! Only for python2) sudo apt install python-bluez
 ```
 
 Verify the installed version of Python
@@ -151,22 +149,30 @@ python3 --version
 Result:
 
 ```
-pi@rpi3gm26:~ $ python3 --version
-Python 3.4.2
-pi@rpi3gm26:~ $
+pi@rp3pgm90:~ $ python3 --version
+Python 3.5.3
+pi@rp3pgm90:~ $
 ```
 
 Create Python venv and install application prerequisites
 
 ```shell
 python3 -m venv $HOME/.nxt-venv
+```
+
+Clone source repository
+
+```shell
 source $HOME/.nxt-venv/bin/activate
 
-cd $HOME/github/SOLARMA/nxt-control-mmf
+mkdir -p $HOME/github/SOLARMA && cd $HOME/github/SOLARMA
+[ ! -e nxt-control-mmf ] && git clone https://github.com/SOLARMA/nxt-control-mmf
+cd $HOME/github/SOLARMA/nxt-control-mmf && git pull
+
 pip install -r requirements.txt
 ```
 
-NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50, we should therefore install it with the following command
+**NOTE**: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50, we should therefore install it with the following command
 
 ```shell
 # Command "pip install nxt-python" will eventually be enough
@@ -178,6 +184,9 @@ NOTE: As of 2018-05-29, only version 2.x of nxt-python is available in https://p
 #
 pip install -e git+https://github.com/Eelviny/nxt-python#egg=nxt-python
 ```
+
+-----------------------------------------------------
+# TODO
 
 Connect your LEGO Mindstorms NXT to an empty USB port on the Raspberry Pi
 
