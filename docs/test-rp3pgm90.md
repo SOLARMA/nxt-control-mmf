@@ -230,7 +230,7 @@ You may then edit nxt-python config file `$HOME/.nxt-python`
 TODO
 ```
 
-#### Configure nxt-python for USB connection to Mindstorms
+### Configure nxt-python for USB connection to Mindstorms
 
 See <https://github.com/SOLARMA/nxt-control-mmf/issues/5>
 
@@ -269,7 +269,7 @@ Play test sound...done
 -----------------------------------------------------
 # TODO
 
-#### Configure nxt-python for Bluetooth connection to Mindstorms
+### Configure nxt-python for Bluetooth connection to Mindstorms
 
 See <https://github.com/SOLARMA/nxt-control-mmf/issues/8>
 
