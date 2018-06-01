@@ -19,15 +19,15 @@ Reference: <https://www.raspberrypi.org/forums/viewtopic.php?t=191252>
 
   ```
   gpmacario@HW2457:/cygdrive/d $ touch ssh
-gpmacario@HW2457:/cygdrive/d $ ls
-bcm2708-rpi-0-w.dtb       bcm2710-rpi-cm3.dtb  fixup_cd.dat      LICENSE.oracle
-bcm2708-rpi-b.dtb         bootcode.bin         fixup_db.dat      overlays
-bcm2708-rpi-b-plus.dtb    cmdline.txt          fixup_x.dat       ssh
-bcm2708-rpi-cm.dtb        config.txt           issue.txt         start.elf
-bcm2709-rpi-2-b.dtb       config.txt.ORIG      kernel.img        start_cd.elf
-bcm2710-rpi-3-b.dtb       COPYING.linux        kernel7.img       start_db.elf
-bcm2710-rpi-3-b-plus.dtb  fixup.dat            LICENCE.broadcom  start_x.elf
-gpmacario@HW2457:/cygdrive/d $
+  gpmacario@HW2457:/cygdrive/d $ ls
+  bcm2708-rpi-0-w.dtb       bcm2710-rpi-cm3.dtb  fixup_cd.dat      LICENSE.oracle
+  bcm2708-rpi-b.dtb         bootcode.bin         fixup_db.dat      overlays
+  bcm2708-rpi-b-plus.dtb    cmdline.txt          fixup_x.dat       ssh
+  bcm2708-rpi-cm.dtb        config.txt           issue.txt         start.elf
+  bcm2709-rpi-2-b.dtb       config.txt.ORIG      kernel.img        start_cd.elf
+  bcm2710-rpi-3-b.dtb       COPYING.linux        kernel7.img       start_db.elf
+  bcm2710-rpi-3-b-plus.dtb  fixup.dat            LICENCE.broadcom  start_x.elf
+  gpmacario@HW2457:/cygdrive/d $
   ```
 * (OPTIONAL) Create file `wpa_supplicant.com` on the root directory of the Micro SD-Card to configure Wi-Fi
 * (OPTIONAL) Edit file `config.txt` on the root directory of the Micro SD-Card to configure Splash Screen, console boot log, etc.
