@@ -241,19 +241,98 @@ Play test sound...done
 (.nxt-venv) gmacario@dell-davi:~$
 ```
 
------------------------------------------------------
-# TODO
+### Test nxt-python with Bluetooth connection to Mindstorms
 
-
-
-### Test nxt-python for Bluetooth connection to Mindstorms
-
-<!-- (2018-06-02 06:20 CEST) -->
+<!-- (2018-06-02 07:00 CEST) -->
 
 See <https://github.com/SOLARMA/nxt-control-mmf/issues/8>
 
+Make sure your Bluetooth device is working properly:
+
+```shell
+hciconfig list
+```
+
+Expected result:
+
+```
+(.nxt-venv) gmacario@dell-davi:~$ hciconfig list
+hci0:	Type: Primary  Bus: USB
+	BD Address: C0:CB:38:CE:39:FC  ACL MTU: 1021:8  SCO MTU: 64:1
+	UP RUNNING PSCAN ISCAN
+	RX bytes:11989 acl:124 sco:0 events:268 errors:0
+	TX bytes:10028 acl:129 sco:0 commands:107 errors:0
+
+(.nxt-venv) gmacario@dell-davi:~$
+```
+
+Execute a scan to identify the Bluetooth devices in proximity:
+
+```shell
+hcitool scan
+```
+
+Expected result:
+
+```
+(.nxt-venv) gmacario@dell-davi:~$ hcitool scan
+Scanning ...
+	00:16:53:05:15:50	NXT
+(.nxt-venv) gmacario@dell-davi:~$
+```
+
+Disconnect the USB cable from the laptop to the Mindstorms, and launch `nxt_test` to verify that also the Bluetooth connection to the robot is properly configured:
+
+```shell
+source $HOME/.nxt-venv/bin/activate
+nxt_test --verbose
+```
+
+**FIXME**: The PIN for authenticating the RFCOMM session is displayed on the Mindstorms, but I see no popup on dell-davi (???)
+
+```
+(.nxt-venv) gmacario@dell-davi:~$ nxt_test --verbose
+debug = True
+Find brick...
+Host: 00:16:53:05:15:50 Name: NXT Strict: True
+USB: True BT: True
+Traceback (most recent call last):
+  File "<string>", line 3, in connect
+_bluetooth.error: (52, 'Invalid exchange')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gmacario/.nxt-venv/src/nxt-python/nxt/locator.py", line 121, in find_one_brick
+    b = s.connect()
+  File "/home/gmacario/.nxt-venv/src/nxt-python/nxt/bluesock.py", line 40, in connect
+    sock.connect((self.host, BlueSock.PORT))
+  File "<string>", line 5, in connect
+bluetooth.btcommon.BluetoothError: (52, 'Invalid exchange')
+Failed to connect to possible brick
+No brick was found.
+    Is the brick turned on?
+    For more diagnosing use the debug=True argument or
+    try the 'nxt_test' script located in /bin or ~/.local/bin
+Error while running test:
+  File "/home/gmacario/.nxt-venv/src/nxt-python/scripts/nxt_test", line 27, in <module>
+    b = nxt.locator.find_one_brick(debug=debug)
+  File "/home/gmacario/.nxt-venv/src/nxt-python/nxt/locator.py", line 162, in find_one_brick
+    raise BrickNotFoundError
+
+(.nxt-venv) gmacario@dell-davi:~$
+```
+
+-----------------------------------------------------
+# TODO
+
 TODO
 
+Expected result:
+
+```
+TODO
+```
 
 ### Execute nxt_beep
 
@@ -272,6 +351,5 @@ Result:
 TODO
 ```
 
-**FIXME**: Figure out how to run `nxt_beep.py` with the proper permissions
 
 <!-- EOF -->
