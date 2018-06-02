@@ -34,11 +34,28 @@
 ### nxt-python
 
 * nxt-python: <https://github.com/Eelviny/nxt-python>
-  * nxt-python wiki: <https://github.com/Eelviny/nxt-python/wiki>
+* nxt-python wiki: <https://github.com/Eelviny/nxt-python/wiki>
+* Pypi - nxt-python: <https://pypi.org/project/nxt-python/>
 * nxt-python-examples: <https://github.com/Eelviny/nxt-python-examples>
 
-### Misc presentations
+### Other links
 
 * [Lego NXT, Bluetooth and Linux](https://pdfs.semanticscholar.org/presentation/a1e6/e85b1157cec1ff507a6a78930878019f05cf.pdf)  - Jeremy Schultz, University of Lethbridge - 2008-01-23 (PDF, 33 slides)
+* [CS 250: Introduction to Robotics](http://home.wlu.edu/~levys/courses/csci250s2013/)
+  - [Getting started with nxt-python](http://home.wlu.edu/~levys/courses/csci250s2013/nxt_python.html)
+
+#### BrickPi3
+
+* <https://www.dexterindustries.com/BrickPi/brickpi3-getting-started-step-4-program-brickpi-robot/brickpi3-getting-started-program-python/>
+
+#### The PyNXC Project
+
+* <https://www.researchgate.net/publication/49336178_Using_Python_to_Program_LEGO_MINDSTORMS_Robots_The_PyNXC_Project>
+
+#### Programming EV3 in Python
+
+* [Programming Lego Mindstorms Robots with Python](https://2017.pycon-au.org/schedule/presentation/6/) - PyCon Australia, AUG-2017
+  - [YouTube Video (28:57)](https://www.youtube.com/watch?v=kyfbYv6eZQQ)
+* <http://inspiredtoeducate.net/inspiredtoeducate/programming-lego-mindstorms-ev3-with-python/>
 
 <!--  EOF -->
