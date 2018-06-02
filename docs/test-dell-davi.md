@@ -4,11 +4,12 @@
 
 (2018-06-01 21:00 CEST)
 
-### Prequisites
+### Prerequisites
 
-* Ubuntu 18.04 LTS installed on dell-davi
+* A laptop (dell-davi) with an updated Ubuntu 18.04 LTS installation
+* A LEGO Mindstorms NXT complete vith USB cable
 
-### Setup Python application
+### Setup nxt-python
 
 (2018-06-01 21:30 CEST)
 
@@ -126,15 +127,17 @@ wheel (0.31.1)
 (.nxt-venv) gmacario@dell-davi:~/github/SOLARMA/nxt-control-mmf$
 ```
 
-**NOTE**: As of 2018-05-29, only version 2.x of nxt-python is available in https://pypi.org/project/nxt-python/ - see https://github.com/Eelviny/nxt-python/issues/50, we should therefore install it with the following command
+**NOTE**: As of 2018-05-29 version 3.0 of nxt-python is not yet available
+in <https://pypi.org/project/nxt-python/> (see https://github.com/Eelviny/nxt-python/issues/50),
+therefore install the package from its GitHub sources:
 
 ```shell
 # Command "pip install nxt-python" will eventually be enough
 #
-# mkdir -p $HOME/github/Eelviny
-# cd $HOME/github/Eelviny
-# git clone https://github.com/Eelviny/nxt-python
-# cd $HOME/github/Eelviny/nxt-python && python setup.py install
+# Alternatively:
+#   mkdir -p $HOME/github/Eelviny && cd $HOME/github/Eelviny
+#   git clone https://github.com/Eelviny/nxt-python
+#   cd $HOME/github/Eelviny/nxt-python && python setup.py install
 #
 pip install -e git+https://github.com/Eelviny/nxt-python#egg=nxt-python
 ```
@@ -143,24 +146,32 @@ Create udev rule `10-mindstorms.rules` (see <https://github.com/SOLARMA/nxt-cont
 
 ```shell
 cat << END | sudo tee /etc/udev/rules.d/10-mindstorms.rules
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="0694", ATTRS{idProduct}=="0002", GROUP="users"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0694", ATTRS{idProduct}=="0002", GROUP="gmacario"
 # SUBSYSTEMS=="usb", ATTRS{serial}=="001653051550", GROUP="users"
 END
 ```
 
-Create configuration file `$HOME/.nxt-python`
+To create a default `$HOME/.nxt-python` configuration file,
+logged in a shell as gmacario@dell-davi
 
-```shell
-source $HOME/.nxt-venv/bin/activate
+1. Activate the venv
 
-python
-```
+  ```shell
+  source $HOME/.nxt-venv/bin/activate
+  ```
 
-When inside the Python command interpreter type
+2. Launch the Python command interpreter
 
-```python
-import nxt.locator as l; l.make_config()
-```
+  ```shell
+  python
+  ```
+
+3. Inside the Python command interpreter type the following commands:
+
+  ```python
+  import nxt.locator as l; l.make_config()
+  quit()
+  ```
 
 Result:
 
@@ -183,17 +194,19 @@ If you have questions, check the wiki and then ask on the mailing list.
 (.nxt-venv) gmacario@dell-davi:~$
 ```
 
------------------------------------------------------
-# TODO
-
-
-You may then edit nxt-python config file `$HOME/.nxt-python`
+Make the following adjustments to the `$HOME/.nxt-python` config file:
 
 ```
-TODO
+[Brick]
+name = NXT
+host = 00:16:53:05:15:50
+strict = 0
+# method = usb=True, bluetooth=False
 ```
 
-### Configure nxt-python for USB connection to Mindstorms
+### Test nxt-python with USB connection to Mindstorms
+
+<!-- (2018-06-02 06:10 CEST) -->
 
 See <https://github.com/SOLARMA/nxt-control-mmf/issues/5>
 
@@ -207,29 +220,35 @@ nxt_test --verbose
 Result:
 
 ```
-(.nxt-venv) pi@rp3pgm90:~ $ nxt_test --verbose
+(.nxt-venv) gmacario@dell-davi:~$ nxt_test --verbose
 debug = True
 Find brick...
-Host: 00:16:53:05:15:50 Name: 'NXT' Strict: True
-USB: True BT: False
+Host: 00:16:53:05:15:50 Name: NXT Strict: True
+USB: True BT: True
 info: ('NXT', '00:16:53:05:15:50', 0, 51020)
 Warning; the brick found does not match the name provided.
   host:00:16:53:05:15:50
   info[0]:
-  name:'NXT'
+  name:NXT
 NXT brick name: NXT
 Host address: 00:16:53:05:15:50
 Bluetooth signal strength: 0
 Free user flash: 51020
 Protocol version 1.124
 Firmware version 1.31
-Battery level 8004 mV
+Battery level 7990 mV
 Play test sound...done
-(.nxt-venv) pi@rp3pgm90:~ $
+(.nxt-venv) gmacario@dell-davi:~$
 ```
 
+-----------------------------------------------------
+# TODO
 
-### Configure nxt-python for Bluetooth connection to Mindstorms
+
+
+### Test nxt-python for Bluetooth connection to Mindstorms
+
+<!-- (2018-06-02 06:20 CEST) -->
 
 See <https://github.com/SOLARMA/nxt-control-mmf/issues/8>
 
